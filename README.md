@@ -21,6 +21,7 @@
 
 ```shell
 yarn add @dvgis/cesium-widget
+------------------------------
 npm install @dvgis/cesium-widget
 ```
 
@@ -30,7 +31,7 @@ import 'dvgis/cesium-widget/dist/cesium.widget.min.css'
 ```
 ## Start
 
-> Introduce the Cesium framework before use
+**_`Introduce the Cesium framework before use`_**
 
 ```js
 viewer.extend(Cesium.CesiumWidgetMixin)
@@ -48,7 +49,14 @@ viewer.compass.enabled = true
 
 ```js
 viewer.contextMenu.enabled = true
-viewer.contextMenu.addMenu('测试',()=> { alert('测试') } )
+// add menu item, params: label, callback, context
+viewer.contextMenu.addMenu('测试',()=> { alert('测试') } ) 
+// setting default menu,if setting the property, the lib default setting will be overwrite
+viewer.contextMenu.DEFAULT_MENU = [{
+   label:'',
+   callback:(e)=>{},
+   context:this
+}] 
 ```
 
 ### DistanceLegend
@@ -61,6 +69,7 @@ viewer.distanceLegend.enabled = true
 
 ```js
 viewer.hawkeyeMap.enabled = true
+// add imagery, params: ImageryProvider
 viewer.hawkeyeMap.addImagery(new Cesium.BaiduImageryProvider())
 ```
 
@@ -80,6 +89,7 @@ viewer.locationBar.enabled = true
 
 ```js
 viewer.mapSplit.enabled = true
+// add imagery, params: ImageryProvider, ImagerySplitDirection
 viewer.mapSplit.addImagery(new Cesium.BaiduImageryProvider(),Cesium.ImagerySplitDirection.RIGHT) 
 ```
 
@@ -87,7 +97,9 @@ viewer.mapSplit.addImagery(new Cesium.BaiduImageryProvider(),Cesium.ImagerySplit
 
 ```js
 // Popup default enabled is true,so no need to setting
+// show popup, params: cartesian3, content
 viewer.popup.showAt(Cesium.Cartesian3.fromDegrees(120.121,31.121),'test')
+// hide popup
 viewer.popup.hide()
 ```
 
@@ -95,7 +107,9 @@ viewer.popup.hide()
 
 ```js
 viewer.tooltip.enabled =  true
+// show tooltip, params: cartesian2, content
 viewer.tooltip.showAt(new Cesium.Cartesian2(100,20),'test')
+// hide tooltip
 viewer.tooltip.hide()
 ```
 
