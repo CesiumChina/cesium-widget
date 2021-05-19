@@ -1,6 +1,6 @@
 {
   "name": "@dvgis/cesium-widget",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Cesium-Widget is mainly used to load common map widgets",
   "main": "dist/cesium.widget.min.js",
   "repository": "https://github.com/dvgis/cesium-widget.git",

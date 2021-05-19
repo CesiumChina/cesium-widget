@@ -33,7 +33,7 @@ import 'dvgis/cesium-widget/dist/cesium.widget.min.css'
 > Introduce the Cesium framework before use
 
 ```js
-viewer.extend(CesiumWidget)
+viewer.extend(Cesium.CesiumWidgetMixin)
 ```
 
 ## Usage
@@ -86,7 +86,7 @@ viewer.mapSplit.addImagery(new Cesium.BaiduImageryProvider(),Cesium.ImagerySplit
 ### Popup
 
 ```js
-// Popup the enabled is true
+// Popup default enabled is true,so no need to setting
 viewer.popup.showAt(Cesium.Cartesian3.fromDegrees(120.121,31.121),'test')
 viewer.popup.hide()
 ```
@@ -102,7 +102,7 @@ viewer.tooltip.hide()
 ### ZoomController
 
 ```js
-viewer.zoomController.enabled= true
+viewer.zoomController.enabled = true
 ```
 
 ## Tips
